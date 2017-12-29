@@ -1,0 +1,26 @@
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="fullPlayer">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe id="videoDisplay" [src]="videoService.videoSRC" frameborder="0" allowfullscreen></iframe>
+            <div id="VideoOptions" [@popOverState]="stateName" class="card">
+              <div class="row">
+                  <div class="col-sm-12">
+                    <ul class="list-group text-right">
+                      <li class="list-group-item" *ngFor="let playlistItem of videoService.playList; let i=index" (click)="videoService.selectVideo(i);toggle()"><i class="fa fa-play-circle {{playlistItem.active}}" aria-hidden="true"></i> {{playlistItem.title}}</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 right">
+            <a id="detailsBtn" class="btn btn-default pull-right" (click)="toggle()"><i class="fa fa-bars" aria-hidden="true"></i> {{videoService.videoTitle}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
